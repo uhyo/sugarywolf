@@ -1,0 +1,43 @@
+{
+  "name": "sugarywolf",
+  "version": "0.0.0",
+  "description": "Sugary Werewolf Game Library",
+  "homepage": "",
+  "author": {
+    "name": "uhyo",
+    "email": "uhyo@uhy.ooo",
+    "url": ""
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "werewolf"
+  ],
+  "devDependencies": {
+    "@types/jest": "^21.1.5",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-tslint": "^8.1.2",
+    "gulp-typescript": "^3.2.2",
+    "jest": "^19.0.2",
+    "jest-cli": "^20.0.0",
+    "merge2": "^1.1.0",
+    "nsp": "^2.6.3",
+    "ts-jest": "^21.2.1",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "test": "jest"
+  },
+  "repository": "uhyo/sugarywolf",
+  "license": "MIT"
+}
