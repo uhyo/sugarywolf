@@ -1,8 +1,5 @@
 // Tests for Package functionality.
 import {
-    Game,
-} from '../game';
-import {
     makePackage,
     Package,
 } from '../package';
@@ -18,7 +15,7 @@ describe('Package', ()=> {
         const cl = jest.fn();
 
         const p = new Package('test.module', cl);
-        const game = new Game();
+        const game = {};
 
         expect(cl).not.toHaveBeenCalled();
 
@@ -32,8 +29,8 @@ describe('Package', ()=> {
         const cl = jest.fn();
 
         const p = new Package('test.module', cl);
-        const game1 = new Game();
-        const game2 = new Game();
+        const game1 = {};
+        const game2 = {};
 
         const res = p.make(game1);
 
@@ -52,7 +49,7 @@ describe('makePackage', ()=>{
         expect(p).toBeInstanceOf(Package);
         expect(p.name).toBe('test.module');
 
-        const res = p.make(new Game());
+        const res = p.make({} as any);
         expect(res).toBe(cl.mock.instances[0]);
     });
 });
