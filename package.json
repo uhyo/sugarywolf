@@ -32,7 +32,17 @@
     "typescript": "^2.6.1"
   },
   "jest": {
-    "testEnvironment": "node"
+    "collectCoverage": true,
+    "mapCoverage": true,
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "lib(?:/.+)?/__tests__/.*",
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ]
   },
   "scripts": {
     "prepublish": "nsp check",
