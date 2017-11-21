@@ -1,4 +1,5 @@
 {
+    "extends": "tslint:recommended",
     "rules": {
         "class-name": true,
         "comment-format": [
@@ -71,6 +72,8 @@
             "check-branch",
             "check-decl",
             "check-module",
+            "check-preblock",
+            "check-rest-spread",
             "check-separator",
             "check-type"
         ]
