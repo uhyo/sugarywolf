@@ -41,7 +41,7 @@ describe('Package', ()=> {
         expect(p.get(game2)).toBe(null);
     });
 });
-describe('makePackage', ()=>{
+describe('makePackage', ()=> {
     it('initializes a package with given name', ()=> {
         const cl = jest.fn();
         const p = makePackage('test.module')(cl);

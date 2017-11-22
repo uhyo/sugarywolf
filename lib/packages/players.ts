@@ -6,7 +6,7 @@ import {
 } from '../package';
 
 /**
- * PLayer id.
+ * Player id.
  */
 export type PlayerId = string;
 
@@ -47,5 +47,12 @@ export default makePackage('core.players')(class Players {
      */
     public get(id: PlayerId): Readonly<IPlayer> | null {
         return this.players.get(id) || null;
+    }
+
+    /**
+     * Get the list of players.
+     */
+    public all(): Iterator<[PlayerId, IPlayer]> {
+        return this.players.entries();
     }
 });

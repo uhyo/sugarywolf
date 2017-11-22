@@ -15,7 +15,7 @@ export class Game {
     /**
      * Add an extension to this game.
      */
-    public use<M extends IModule>(extension: IPackage<M>): void {
+    public use<M extends IModule>(extension: IPackage<Game, M>): void {
         this.modules[extension.name] = extension.make(this);
     }
 }

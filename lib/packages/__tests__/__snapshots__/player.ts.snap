@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Player module iterates all players 1`] = `
+Array [
+  Array [
+    "player1",
+    Object {
+      "id": "player1",
+      "name": "Player",
+    },
+  ],
+  Array [
+    "player2",
+    Object {
+      "id": "player2",
+      "name": "Player2",
+    },
+  ],
+]
+`;
