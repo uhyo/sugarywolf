@@ -38,7 +38,7 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
-    "testRegex": "lib(?:/.+)?/__tests__/.*",
+    "testRegex": "lib(?:/.+)?/__tests__/.*\\.ts$",
     "moduleFileExtensions": [
       "js",
       "ts"
