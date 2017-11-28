@@ -25,7 +25,7 @@ export interface IPackage<G extends object, M extends IModule>{
 /**
  * Constructor of a module.
  */
-export interface IModuleConstructor<G extends object, M extends IModule> {
+export interface IModuleConstructor<G, M extends IModule> {
     new(g: G): M;
 }
 /**
