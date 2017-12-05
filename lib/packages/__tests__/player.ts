@@ -46,5 +46,11 @@ describe('Player module', ()=> {
             });
             expect(p.get('player1').dead).toBe(true);
         });
+        it('no error when killing nonexistent player', ()=> {
+            p.die.emit({
+                id: 'foo',
+                reason: 'bar',
+            });
+        });
     });
 });

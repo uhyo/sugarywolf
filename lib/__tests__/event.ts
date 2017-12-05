@@ -133,7 +133,7 @@ describe('EventHost', ()=> {
     it('default action is run after normal listeners', ()=> {
         const res: string[] = [];
         const h = makeEvent(gameMock, {
-            default(){ res.push('default'); },
+            default() { res.push('default'); },
             name: 'test.event',
         });
 
