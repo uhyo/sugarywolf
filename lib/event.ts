@@ -5,17 +5,21 @@ import {
     Game,
 } from './game';
 
+export type EventListener<P> = (arg: P)=> void;
+
 /**
  * Specification of an event.
  */
-export interface IEventSpec {
+export interface IEventSpec<P> {
     /**
      * Name of this event.
      */
     name: string;
+    /**
+     * Default action.
+     */
+    default?: EventListener<P>;
 }
-
-export type EventListener<P> = (arg: P)=> void;
 
 /**
  * Host of an event.
@@ -55,11 +59,20 @@ class EventHost<P> implements IEventHost<P> {
     private readonly game: Game;
     private readonly emitter: EventEmitter;
     private readonly eventName = 'message';
-    constructor(name: string, game: Game) {
-        this.name = name;
-        this.game = game;
+    private readonly defaultActionEventName = 'default';
+    private readonly defaultAction: EventListener<P>;
 
+    constructor(game: Game, spec: IEventSpec<P>) {
+        this.name = spec.name;
+        this.game = game;
+        this.defaultAction = spec.default ||
+            // tslint:disable-next-line: no-empty
+            (()=> {});
+
+        // EventEmitter for this event
         this.emitter = new EventEmitter();
+        // Register a default action
+        this.emitter.on(this.defaultActionEventName, this.defaultAction);
     }
     public addListener(listener: EventListener<P>): void {
         this.on(listener);
@@ -71,14 +84,16 @@ class EventHost<P> implements IEventHost<P> {
         this.emitter.removeListener(this.eventName, listener);
     }
     public emit(payload: P): void {
+        // Call registered listeners
         this.emitter.emit(this.eventName, payload);
+        // Then call the default action
+        this.emitter.emit(this.defaultActionEventName, payload);
     }
 }
 
 /**
  * Generate a new event host.
  */
-export function makeEvent<P>(game: Game, spec: IEventSpec): IEventHost<P> {
-    return new EventHost(spec.name, game);
+export function makeEvent<P>(game: Game, spec: IEventSpec<P>): IEventHost<P> {
+    return new EventHost(game, spec);
 }
-

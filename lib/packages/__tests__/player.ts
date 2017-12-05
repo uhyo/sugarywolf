@@ -18,10 +18,7 @@ describe('Player module', ()=> {
     it('remembers added player', ()=> {
         p.add('player1', 'Player');
 
-        expect(p.get('player1')).toEqual({
-            id: 'player1',
-            name: 'Player',
-        });
+        expect(p.get('player1')).toMatchSnapshot();
     });
 
     it('non-added player is null', ()=> {
@@ -36,5 +33,18 @@ describe('Player module', ()=> {
 
         const pls = Array.from(p.all());
         expect(pls).toMatchSnapshot();
+    });
+
+    describe('die event', ()=> {
+        it('kills player for die event', ()=> {
+            p.add('player1', 'Player');
+
+            expect(p.get('player1').dead).toBe(false);
+            p.die.emit({
+                id: 'player1',
+                reason: 'foo',
+            });
+            expect(p.get('player1').dead).toBe(true);
+        });
     });
 });

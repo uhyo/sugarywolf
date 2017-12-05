@@ -5,6 +5,7 @@ Array [
   Array [
     "player1",
     Object {
+      "dead": false,
       "id": "player1",
       "name": "Player",
     },
@@ -12,9 +13,18 @@ Array [
   Array [
     "player2",
     Object {
+      "dead": false,
       "id": "player2",
       "name": "Player2",
     },
   ],
 ]
+`;
+
+exports[`Player module remembers added player 1`] = `
+Object {
+  "dead": false,
+  "id": "player1",
+  "name": "Player",
+}
 `;

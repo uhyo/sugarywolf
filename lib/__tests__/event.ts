@@ -116,4 +116,31 @@ describe('EventHost', ()=> {
             [1, {foo: 'hi'}],
         ]);
     });
+    it('default action is called when event', ()=> {
+        const action = jest.fn();
+        const h = makeEvent(gameMock, {
+            default: action,
+            name: 'test.event',
+        });
+        expect(action).not.toHaveBeenCalled();
+
+        const payload = {foo: 'bar'};
+
+        h.emit(payload);
+
+        expect(action).toHaveBeenCalledWith(payload);
+    });
+    it('default action is run after normal listeners', ()=> {
+        const res: string[] = [];
+        const h = makeEvent(gameMock, {
+            default(){ res.push('default'); },
+            name: 'test.event',
+        });
+
+        h.on(()=> res.push('listener'));
+
+        h.emit({});
+
+        expect(res).toEqual(['listener', 'default']);
+    });
 });
