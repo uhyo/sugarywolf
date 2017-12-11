@@ -12,7 +12,7 @@ describe('Player module', ()=> {
     });
 
     it('name', ()=> {
-        expect(player.name).toBe('core.players');
+        expect(player.name).toBe('core.player');
     });
 
     it('remembers added player', ()=> {

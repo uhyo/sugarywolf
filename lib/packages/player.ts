@@ -44,7 +44,7 @@ export interface IDieEvent {
 /**
  * Package that maintains players in a game.
  */
-export default makePackage('core.players')(class Players {
+export default makePackage('core.player')(class Players {
     /**
      * Event that indicates a player died.
      */
