@@ -1,18 +1,18 @@
 import {
     Game,
 } from '../../game';
-import players from '../players';
+import player from '../player';
 
 describe('Player module', ()=> {
     let p: any;
     let game: Game;
     beforeEach(()=> {
         game = new Game();
-        p = players.make(game);
+        p = player.make(game);
     });
 
     it('name', ()=> {
-        expect(players.name).toBe('core.players');
+        expect(player.name).toBe('core.players');
     });
 
     it('remembers added player', ()=> {
