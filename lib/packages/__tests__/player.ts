@@ -1,7 +1,9 @@
 import {
     Game,
 } from '../../game';
-import player from '../player';
+import {
+    player,
+} from '../player';
 
 describe('Player module', ()=> {
     let p: any;

@@ -42,9 +42,9 @@ export interface IDieEvent {
 }
 
 /**
- * Package that maintains players in a game.
+ * Internal package of player.
  */
-export default makePackage('core.player')(class Players {
+export class Player {
     /**
      * Event that indicates a player died.
      */
@@ -72,12 +72,12 @@ export default makePackage('core.player')(class Players {
      * Add a player to the game.
      */
     public add(id: PlayerId, name: string): void {
-        const player = {
+        const p = {
             dead: false,
             id,
             name,
         };
-        this.players.set(id, player);
+        this.players.set(id, p);
     }
 
     /**
@@ -93,4 +93,9 @@ export default makePackage('core.player')(class Players {
     public all(): Iterator<[PlayerId, IPlayer]> {
         return this.players.entries();
     }
-});
+}
+
+/**
+ * Package that maintains players in a game.
+ */
+export const player = makePackage<Player>('core.player')(Player);
