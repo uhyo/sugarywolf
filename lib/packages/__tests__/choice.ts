@@ -23,6 +23,7 @@ describe('Choice module', ()=> {
                 {
                     options: [],
                     type: 'select',
+                    value: null,
                 },
             ],
             to: 'player1',
@@ -35,6 +36,7 @@ describe('Choice module', ()=> {
                     {
                         options: [],
                         type: 'select',
+                        value: null,
                     },
                 ],
                 type: 'some-choice',

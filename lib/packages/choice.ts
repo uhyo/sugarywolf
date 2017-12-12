@@ -21,6 +21,10 @@ export interface IControl {
      */
     options: IOption[];
     type: 'select';
+    /**
+     * Current selected value.
+     */
+    value: number | null;
 }
 
 /**
