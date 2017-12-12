@@ -6,6 +6,7 @@ import {
     Game,
 } from '../game';
 import {
+    IPackage,
     makePackage,
 } from '../package';
 

@@ -6,6 +6,7 @@ import {
     Game,
 } from '../game';
 import {
+    IPackage,
     makePackage,
 } from '../package';
 import {
@@ -82,7 +83,7 @@ export interface IChoice {
 /**
  * Internal package of choice.
  */
-class Choice {
+export class Choice {
     /**
      * Event to open a choice.
      */
