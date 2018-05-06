@@ -16,21 +16,21 @@
     "werewolf"
   ],
   "devDependencies": {
-    "@types/jest": "^21.1.6",
-    "@types/node": "^8.0.53",
+    "@types/jest": "^22.2.3",
+    "@types/node": "^10.0.4",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-changed": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1",
-    "gulp-tslint": "^8.1.2",
-    "gulp-typescript": "^3.2.2",
-    "jest": "^21.2.1",
-    "jest-cli": "^21.2.1",
-    "merge2": "^1.1.0",
-    "nsp": "^3.1.0",
-    "ts-jest": "^21.2.3",
-    "tslint": "^5.8.0",
-    "typescript": "^2.6.1"
+    "gulp-changed": "^3.2.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-tslint": "^8.1.3",
+    "gulp-typescript": "^4.0.2",
+    "jest": "^22.4.3",
+    "jest-cli": "^22.4.3",
+    "merge2": "^1.2.2",
+    "nsp": "^3.2.1",
+    "ts-jest": "^22.4.5",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
   },
   "jest": {
     "collectCoverage": true,
@@ -50,5 +50,6 @@
     "test": "jest"
   },
   "repository": "uhyo/sugarywolf",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }
