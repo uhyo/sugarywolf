@@ -19,7 +19,7 @@
     "@types/jest": "^23.3.2",
     "@types/node": "^10.0.4",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-changed": "^3.2.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-tslint": "^8.1.3",
